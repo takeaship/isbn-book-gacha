@@ -53,7 +53,7 @@ onMounted(() => {
       </div>
       <div class="mb-7 flex justify-center">
         <TwitterShare
-          url="https://takeaship.me"
+          url="https://takeaship.github.io/isbn-book-gacha/"
           :shareComment="`ISBNブックガチャで「${foundBook?.summary.title}(${foundBook?.summary.publisher})」を見つけました！`"
           hashTags="ISBNブックガチャ"
           class="mr-5 text-2xl text-sky-500"
