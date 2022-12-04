@@ -3,6 +3,7 @@ import { onMounted } from "vue";
 import { useBookGacha } from "../composables/useBookGacha";
 import { useBook } from "../composables/useBook";
 import Loading from "vue-loading-overlay";
+import TwitterShare from "./TwitterShare.vue";
 
 const { foundBook, isLoading, doBookGacha } = useBookGacha();
 const { bookUrl, bookPubDate } = useBook(foundBook);
@@ -51,6 +52,12 @@ onMounted(() => {
         </a>
       </div>
       <div class="mb-7 flex justify-center">
+        <TwitterShare
+          url="https://takeaship.me"
+          :shareComment="`ISBNブックガチャで「${foundBook?.summary.title}(${foundBook?.summary.publisher})」を見つけました！`"
+          hashTags="ISBNブックガチャ"
+          class="mr-5 text-2xl text-sky-500"
+        />
         <button
           @click="doBookGacha"
           class="rounded-lg bg-gray-600 px-4 py-2 text-gray-100 duration-300 hover:bg-gray-700"
